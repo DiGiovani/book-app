@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+@font-face{
+  font-family: 'SF Pro Text';
+  font-weight: 400;
+  src: url(/fonts/SF-Pro-Text-Regular.otf)
+}
+
+@font-face{
+  font-family: 'SF Pro Text';
+  font-weight: 600;
+  src: url(/fonts/SF-Pro-Text-Medium.otf)
+}
+
+@font-face{
+  font-family: 'SF Pro Display';
+  font-weight: 200;
+  font-style: italic;
+  src: url('/fonts/SF-Pro-Display-ThinItalic.otf') format('opentype');
+}
+
+@font-face{
+  font-family: 'SF Pro Display';
+  font-weight: 200;
+  src: url('/fonts/SF-Pro-Display-Thin.otf') format('opentype');
+}
+
+@font-face{
+  font-family: 'SF Pro Display';
+  font-weight: 400;
+  src: url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+}
+
+@font-face{
+  font-family: 'SF Pro Display';
+  font-weight: 600;
+  src: url('/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 200;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

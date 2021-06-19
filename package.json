@@ -1,0 +1,27 @@
+{
+  "name": "book-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@svgr/webpack": "^5.5.0",
+    "axios": "^0.21.1",
+    "next": "11.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/node": "^15.12.2",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "eslint": "7.28.0",
+    "eslint-config-next": "11.0.0",
+    "typescript": "^4.3.2"
+  }
+}

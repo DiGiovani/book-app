@@ -1,0 +1,9 @@
+export default function Triangle({id}) {
+  return(
+    <svg id={id} width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M3.81349 0.795898L0.5 29.0133L33.3682 7.67883L3.81349 0.795898Z" fill="#FCBC48"/>
+    </svg>
+
+
+  )
+}

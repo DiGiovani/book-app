@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.container li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  line-height: 12px;
+  color: #131313;
+}
+
+.container li:not(:first-child) a {
+  color: #BFBEBF;
+}
+
+.container li a svg {
+  margin-bottom: 10px;
+}

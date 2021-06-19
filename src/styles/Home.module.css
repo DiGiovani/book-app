@@ -1,0 +1,548 @@
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 50px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: #FFFCF9;
+  overflow-y: hidden;
+}
+
+.container > * {
+  max-width: 400px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: flex-start;
+  
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  
+}
+
+.header h1 {
+  display: flex;
+  height: 29px;
+  padding: 0;
+  margin: 30px 0 0 0;
+
+  font-size: 24px;
+  line-height: 19px;
+  font-weight: 600;
+  text-align: left;
+
+  color: #54565A;
+}
+
+.header h1 span {
+  color: #FF6978;
+}
+
+.header .inputBlock {
+  position: relative;
+  width: 100%;
+}
+
+.header .inputBlock input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border: none;
+  background: #FDFCFC;
+
+  font-family: 'SF Pro Text', sans-serif;
+  font-size: 16px;
+
+  padding: 15px 41px;
+  width: 100%;
+}
+
+.header .inputBlock button {
+  position: absolute;
+
+  top: calc(50% - 8px);
+  left: 15px;
+  
+  width: 16px;
+  height: 16px;
+  border: none;
+
+  font-size: 16px;
+  line-height: 18px;
+
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.header .inputBlock input::placeholder {
+  color: #54565A;
+}
+
+.header .inputBlock button img {
+  height: 100%;
+  width: 100%;
+}
+
+.header .inputBlock label {
+  display: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  width: 100%;
+}
+
+.main .content {
+  width: 100%;
+}
+
+.main .content .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 21px;
+  margin-bottom: 15px;
+
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #3F4043;
+}
+
+.main .content .title h2 {
+  font-size: 18px;
+} 
+
+.main .content .title a {
+  color: #4ABDF1;
+
+  font-family: 'SF Pro Text', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.main .background {
+  position: absolute;
+
+  width: 100%;
+  max-width: 400px;
+
+  height: 200px;
+
+  overflow: hidden;
+}
+
+.discover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.main .content .background #secondBackgroundCircle ,
+.main .content .background #backgroundCircle {
+  position: absolute !important;
+
+  width: 127px;
+  height: 127px;
+  
+  opacity: 0.7;
+
+  z-index: 0;
+}
+
+.main .content .background #secondBackgroundCircle {
+  left: -45px;
+  bottom: 15px;
+
+  opacity: 0.8;
+}
+
+.main .content .background #backgroundCircle {
+  right: -67px;
+  top: 0px;
+}
+
+
+.cardsContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  overflow-y: auto;
+
+  height: 150px;
+  width: calc(100% + 20px);
+
+  
+}
+
+.cardsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.cardsContainer .bookCard a {
+  position: relative;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: 'Playfair Display', serif;
+
+  width: 272px;
+  height: 139px;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 0 20px;
+
+  background: #00173d;
+  color: #FEFEFE;
+
+  
+
+  z-index: 8;
+}
+
+
+
+.cardsContainer .bookCard a > div {
+  width: 146px;
+  height: 139px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.cardsContainer .bookCard .description {
+  position: relative;
+
+  display: flex;
+  flex-direction: column; 
+}
+
+.cardsContainer .bookCard .description h1 {
+  position: absolute;
+
+  top: calc(50% - 36px/2 - 34.5px);
+  left: 0;
+
+  grid-row: 1;
+  font-size: 27px;
+
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+  line-height: 36px; /* a */
+  max-height: 36px;
+
+}
+
+.cardsContainer .bookCard .description h2 {
+  position: absolute;
+  top: calc(50% - 17px/2 - 3px);
+  left: 0;
+
+  font-family: 'SF Pro Display';
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: 1.28889px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.cardsContainer .bookCard .description p {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 10px;
+
+  bottom: 20px;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.cardsContainer .bookCard .description p svg {
+  margin-right: 2px;
+}
+
+.cardsContainer .bookCard .description p b {
+  margin-right: 1px;
+
+}
+
+.cardsContainer .bookCard .image {
+  height: 111px;
+  width: 72px;
+
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.main .current {
+  width: 100%;
+  margin-bottom: 45px;
+
+
+}
+
+.main .current .title {
+  padding: 0 20px;
+}
+
+.main .current .description {
+  position: relative;
+
+  height: 100px;
+
+  background: #EEF5DB;
+  box-shadow: 0px 3px 45px rgba(121, 141, 67, 0.115084);
+  border-radius: 0px 3px 3px 0px;
+
+  margin: 30px 44px 30px 0;
+}
+
+
+.main .current .description .image {
+  position: absolute;
+  top: -15px;
+  left: 19px;
+
+  filter: drop-shadow(5px 7px 32px rgba(140, 170, 58, 0.193701));
+}
+
+.main .current .description h1 {
+  position: absolute;
+  top: 10px;
+  left: 118px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 2px;
+
+}
+
+.main .current .description h2 {
+  position: absolute;
+
+  top: 42px;
+  left: 118px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #74776D;
+}
+
+.main .current .description p {
+  position: absolute;
+
+  left: 120px;
+  bottom: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 12px;
+  padding: 0;
+  margin: 0;
+
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.020635px;
+
+  color: #2A2B26;
+}
+
+.main .current .description p span {
+  font-weight: bold;
+  margin: 0 2px;
+
+  color: #FF6978;
+}
+
+.main .current .description .icons {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+#oval,
+#triangle,
+#rectangle,
+#circle {
+  position: absolute;
+  z-index: 11;
+}
+
+#oval {
+  left: 52.94%;
+  right: 40.44%;
+  top: 10.07%;
+  bottom: 76.98%;
+}
+
+#rectangle {
+  left: 53.37%;
+  right: 29.72%;
+  top: 68.7%;
+  bottom: 28.42%;
+}
+
+#triangle {
+  left: 61.95%;
+  right: 25.97%;
+  top: 2.73%;
+  bottom: 76.97%;
+}
+
+.current #oval {
+  top: -6px;
+  left: 223px;
+}
+
+.current .icons #rectangle {
+  bottom: 20.5px;
+  right: -23px;
+  left: auto;
+  top: auto;
+}
+
+.current .icons #circle {
+  right: -33px;
+  top: -19px;
+  width: 69px;
+  height: 69px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  padding: 0 20px;
+}
+
+.main .content .title {
+  padding: 0 20px;
+}
+
+.post .postPhoto {
+  padding: 0;
+  margin: 0;
+}
+
+.post .postDescription {
+  padding: 15px 12px;
+
+  color: #6b6b6bcc;
+}
+
+.post .postDescription h1 {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 0 6px 0;
+  margin: 0;
+  color: #313131cc
+}
+
+.post .postDescription ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: #6A6767CC;
+
+  margin: 0;
+  padding: 0;
+
+}
+
+.post .postDescription ul li {
+  display: flex;
+  align-items: center;
+
+  font-size: 8px;
+  line-height: 9px;
+
+
+  padding: 0;
+  margin-right: 15px;
+}
+
+.post .postDescription ul li::before {
+  content: ' ';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  margin-right: 6px;
+
+  background: #6A6767CC;
+}
+
+
+
+.post .postDescription ul li:first-of-type::before {
+  display: none;
+}
+
+.post .postDescription p {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  max-width: 100%;
+
+  align-self: center;
+
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  background: #FFF;
+  
+}
