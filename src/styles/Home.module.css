@@ -210,6 +210,7 @@
   width: calc(100% + 20px);
 
   
+  
 }
 
 .cardsContainer::-webkit-scrollbar {
@@ -241,7 +242,19 @@
   z-index: 8;
 }
 
+.cardsContainer .bookCard:not(:first-child) {
+  transform: scale(0.9);
+  transition: 0.5s; 
+}
 
+.cardsContainer .bookCard:hover {
+  transform: scale(1);
+  
+}
+
+.cardsContainer .bookCard:nth-child(even) a {
+  background: #451475;
+}
 
 .cardsContainer .bookCard a > div {
   width: 146px;
