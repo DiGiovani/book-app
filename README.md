@@ -1,34 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Foton Book App📚
+This app was built for an admission process on Foton Tech.
+Feel free to visit the app at: https://foton-book.vercel.app/
 
-## Getting Started
+## Design/Screens
+https://www.figma.com/file/KFElqzD983WNyvMY1SaF0c/book-app?node-id=0%3A1
 
-First, run the development server:
+<img width="581" alt="All three app screens designs" src="https://user-images.githubusercontent.com/13947203/114559257-eb55ad00-9c41-11eb-9617-4e7627cc373e.png">
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This app is integrated with the [Google Books API](https://developers.google.com/books/docs/v1/using). The books on the homepage doesn't change, they were selected to follow the design. All covers are clickable and will redirect you to its details page. You can filter by author, subject, or publisher by following some rules (piece from Google's Documentation): 
+- **intitle:** Returns results where the text following this keyword is found in the title.
+- **inauthor:** Returns results where the text following this keyword is found in the author.
+- **inpublisher:** Returns results where the text following this keyword is found in the publisher.
+- **subject:** Returns results where the text following this keyword is listed in the category list of the volume.
+- **isbn:** Returns results where the text following this keyword is the ISBN number.
+- **lccn:** Returns results where the text following this keyword is the Library of Congress Control Number.
+- **oclc:** Returns results where the text following this keyword is the Online Computer Library Center number.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**!IMPORTANT: DON'T** use space after colon (e.g.: "inauthor:Neil Gaiman"); If you're using more than one filter, separe the terms by space (e.g.: "inauthor:Neil Gaiman intitle:Coraline")
