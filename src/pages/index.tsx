@@ -11,6 +11,7 @@ import Rectangle from '../components/icons/Rectangle'
 import Statistics from '../components/icons/Statistics'
 import Book from '../components/icons/Book'
 import Circle from '../components/icons/Circle'
+import Plus from '../components/icons/Plus'
 
 import postBackground from '/public/posts/dont-make-me-think.png'
 import backgroundCircle from '/public/icons/background-circle.svg'
@@ -56,12 +57,16 @@ export default function Home({ books }) {
 
   useEffect(() => {
     setIsSearching(true)
-    if(search.length <= 0) return setIsSearching(false);
+    if(search.length <= 0) {
+      setIsSearching(false)
+      setSearchBookArr([])
+      return 
+    };
     if(search.length < 3) return;
 
     const formattedSearch = search.replaceAll(' ', '+')
 
-    api.get(`/volumes?q=${formattedSearch}`).then(res => {
+    api.get(`/volumes?q=${formattedSearch}&maxResults=12`).then(res => {
       setSearchBookArr(res.data.items || [])
     }).catch(err => console.error(err))
   }, [search])
@@ -70,11 +75,16 @@ export default function Home({ books }) {
     const length = searchBookArr.length
     const formattedSearch = search.replaceAll(' ', '+')
     
-    const res = await api.get(`/volumes?q=${formattedSearch}&startIndex=${length}&maxResult`)
+    const res = await api.get(`/volumes?q=${formattedSearch}&startIndex=${length}&maxResults=12`)
 
     setSearchBookArr(searchBookArr.concat(res.data.items))
   }
 
+  function closeSearch() {
+    setIsSearching(false)
+    setSearch('')
+    setSearchBookArr([])
+  }
   
   return (
     <div className={styles.container}>
@@ -89,6 +99,7 @@ export default function Home({ books }) {
           <label htmlFor="book">Search book</label>
           <input placeholder="Search book" type="text" name="book" id="book" onChange={e => setSearch(e.target.value)} value={search} />
           <button> <Image src={searchIcon} alt=""/> </button>
+          {isSearching && <button onClick={closeSearch} type="button"> <Plus id={styles.plus} /> </button>}
         </div>
 
         <h1>Hi, <span>Mehmed Al Fatih</span> 👋</h1>
@@ -175,30 +186,32 @@ export default function Home({ books }) {
            
           </div>
           
-          <div className={styles.content}>
-            <div className={styles.title}>
-              <h2>Reviews of The Days</h2>
-              <Link href="#"><a>All Video</a></Link>
-            </div>
+        </div>
+      
+        
+        <div className={styles.content}>
+          <div className={styles.title}>
+            <h2>Reviews of The Days</h2>
+            <Link href="#"><a>All Video</a></Link>
+          </div>
 
-            <div className={styles.post}>
-              <div className={styles.postPhoto}>
-                <Image src={postBackground} alt="Man holding the book Don't Make me Think Revisited"/>
-              </div>
-              <div className={styles.postDescription}>
-                <h1>Don't Make Me Think - Steve Krug</h1>
-                <ul className={styles.infoContainer}>
-                  <li>Jesse Showalter</li>
-                  <li>5.2k Views</li>
-                  <li>1 Week ago</li>
-                </ul>
-                <p>"Don't Make Me Think" by Steve Krug is one of the first books I read when I was getting into digital design. It helped me move from designing things that just "look nice" to designing things that are usable, useful, memorable and simple to learn and use. </p>
-              </div>
+          <div className={styles.post}>
+            <div className={styles.postPhoto}>
+              <Image src={postBackground} alt="Man holding the book Don't Make me Think Revisited"/>
+            </div>
+            <div className={styles.postDescription}>
+              <h1>Don't Make Me Think - Steve Krug</h1>
+              <ul className={styles.infoContainer}>
+                <li>Jesse Showalter</li>
+                <li>5.2k Views</li>
+                <li>1 Week ago</li>
+              </ul>
+              <p>"Don't Make Me Think" by Steve Krug is one of the first books I read when I was getting into digital design. It helped me move from designing things that just "look nice" to designing things that are usable, useful, memorable and simple to learn and use. </p>
             </div>
           </div>
+        </div>
           
 
-        </div>
       </main>
 
       <div className={styles.menu} style={isSearching ? {display: 'none', opacity: '0'} : {}}>
@@ -248,6 +261,12 @@ export default function Home({ books }) {
                     )
                   })
                 }
+                <div className={styles.more}>
+                  <button type="button" onClick={loadMore}>
+                    <Plus id={styles.plus} />
+                  </button>
+                  
+                </div>
               </div>
             ) : (
               <div className={styles.instructions}>
