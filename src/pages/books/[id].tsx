@@ -34,7 +34,6 @@ export async function getStaticProps({ params }: {params: {id: string}}) {
 }
 
 export default function Book({book}) {
-  const img = book.volumeInfo.imageLinks.thumbnail
   let desc:string = book.volumeInfo.description || '';
 
   
@@ -64,11 +63,17 @@ export default function Book({book}) {
         <div id={styles.blue}>
         </div>
 
-        <Image src={img} height="234" width="151" alt=""/>
+        {
+          book.volumeInfo.imageLinks ? (
+            <Image src={book.volumeInfo.imageLinks.thumbnail} width="100" height="150" alt=""/>
+          ) : (
+            <div style={{width: '100px', height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFF'}}> <p>No thumbnail</p> </div>
+          )
+        }
       </header>
       <main className={styles.main}>
         <h1>{book.volumeInfo.title} : <span>{book.volumeInfo.subtitle}</span></h1>
-        <h2>{book.volumeInfo.authors[0]}</h2>
+        <h2>{book.volumeInfo.authors ? book.volumeInfo.authors[0] : 'Unknown' }</h2>
 
         {
           descArr.map(p => {

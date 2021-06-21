@@ -48,6 +48,8 @@
 .header .inputBlock {
   position: relative;
   width: 100%;
+
+  z-index: 21;
 }
 
 .header .inputBlock input {
@@ -544,5 +546,70 @@
   width: 100%;
 
   background: #FFF;
-  
+  z-index: 12;  
+}
+
+
+.searchContainer {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #FFF;
+
+
+  z-index: 20;
+}
+
+.searchContainer .loading {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.searchContainer .searchArr{
+  position: absolute;
+  top: 140px;
+  width: 100%;
+  padding: 0 20px 50px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+
+  gap: 15px;
+}
+
+.searchContainer .searchArr .bookContainer {
+  width: 100px;
+  min-height: 200px;
+
+  flex-shrink: 0;
+
+  color: #313131cc;
+
+  overflow: hidden;
+}
+
+.searchContainer .searchArr .bookContainer h1 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.searchContainer .searchArr .bookContainer h2 {
+  font-size: 10px;
+  line-height: 12px;
 }
