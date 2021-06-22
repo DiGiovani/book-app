@@ -19,3 +19,7 @@ This app is integrated with the [Google Books API](https://developers.google.com
 - **oclc:** Returns results where the text following this keyword is the Online Computer Library Center number.
 
 **!IMPORTANT: DON'T** use space after colon (e.g.: "inauthor:Neil Gaiman"); If you're using more than one filter, separe the terms by space (e.g.: "inauthor:Neil Gaiman intitle:Coraline")
+
+&nbsp;
+
+This project took about 20 hours to be done.
